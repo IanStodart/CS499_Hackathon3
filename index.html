@@ -1,0 +1,114 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+</head>
+<body ng-app="app" layout="column" ng-cloak>
+
+
+	<md-toolbar class="md-warn">
+	    <div class="md-toolbar-tools">
+	     	<h2 class="md-flex">Traffic Prediction</h2>
+	    </div>
+  	</md-toolbar>
+
+  	<md-content class="md-padding" layout-xs="column" layout="row">
+  		<div flex-xs flex-gt-xs="50" layout="column">
+  			<md-card>
+		        <md-card-title>
+		          <md-card-title-text>
+		            <span class="md-headline">Submit Data Record</span>
+		            <span class="md-subhead">&ltroad id, direction, dayOfWeek, timeOfDay&gt =&gt &lttraffic status&gt</span>
+		          </md-card-title-text>
+		        </md-card-title>
+
+				<md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+					<div>
+					    <md-input-container>
+						    <label>Road</label>
+					        <input ng-model="user.title">
+					    </md-input-container>
+
+					    <md-input-container>
+					        <label>Direction</label>
+					        <input ng-model="user.email" type="email">
+					    </md-input-container>
+
+					    <md-input-container>
+					        <label>Day</label>
+					        <input ng-model="user.email" type="email">
+					    </md-input-container>
+
+					    <md-input-container>
+					        <label>Time</label>
+					        <input ng-model="user.email" type="email">
+					    </md-input-container>
+
+					    <md-input-container>
+					        <label>Status</label>
+					        <input ng-model="user.email" type="email">
+					    </md-input-container>
+					</div>
+				</md-content>
+
+		        <md-card-actions layout="row" layout-align="end center">
+		          <md-button>Submit</md-button>
+		        </md-card-actions>
+	    	</md-card>
+  		</div>
+
+  		<div flex-xs flex-gt-xs="50" layout="column">
+  			<md-card>
+		        <md-card-title>
+		          <md-card-title-text>
+		            <span class="md-headline">Predict Traffic Status</span>
+		            <span class="md-subhead">&ltroad id, direction, dayOfWeek, timeOfDay&gt</span>
+		          </md-card-title-text>
+		        </md-card-title>
+
+				<md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+					<div>
+					    <md-input-container>
+						    <label>Road</label>
+					        <input ng-model="user.title">
+					    </md-input-container>
+
+					    <md-input-container>
+					        <label>Direction</label>
+					        <input ng-model="user.email" type="email">
+					    </md-input-container>
+
+					    <md-input-container>
+					        <label>Day</label>
+					        <input ng-model="user.email" type="email">
+					    </md-input-container>
+
+					    <md-input-container>
+					        <label>Time</label>
+					        <input ng-model="user.email" type="email">
+					    </md-input-container>
+					</div>
+				</md-content>
+
+		        <md-card-actions layout="row" layout-align="end center">
+		          <md-button>Predict</md-button>
+		        </md-card-actions>
+	    	</md-card>
+  		</div>
+    </md-content>
+  
+  	<!-- Angular Material requires Angular.js Libraries -->
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  	<!-- Angular Material Library -->
+  	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  
+  	<script src="js/app.js"></script>
+
+  
+</body>
+</html>
