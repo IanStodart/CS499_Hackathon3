@@ -1,102 +1,109 @@
 <html lang="en" >
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Angular Material style sheet -->
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 </head>
+
 <body ng-app="app" layout="column" ng-cloak>
 
+	<div ng-controller="appController">
 
-	<md-toolbar class="md-warn">
-	    <div class="md-toolbar-tools">
-	     	<h2 class="md-flex">Traffic Prediction</h2>
-	    </div>
-  	</md-toolbar>
+{{test}}
 
-  	<md-content class="md-padding" layout-xs="column" layout="row">
-  		<div flex-xs flex-gt-xs="50" layout="column">
-  			<md-card>
-		        <md-card-title>
-		          <md-card-title-text>
-		            <span class="md-headline">Submit Data Record</span>
-		            <span class="md-subhead">&ltroad id, direction, dayOfWeek, timeOfDay&gt =&gt &lttraffic status&gt</span>
-		          </md-card-title-text>
-		        </md-card-title>
+		<md-toolbar class="md-warn">
+		    <div class="md-toolbar-tools">
+		     	<h2 class="md-flex">Traffic Prediction</h2>
+		    </div>
+	  	</md-toolbar>
 
-				<md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
-					<div>
-					    <md-input-container>
-						    <label>Road</label>
-					        <input ng-model="user.title">
-					    </md-input-container>
+	  	<md-content class="md-padding" layout-xs="column" layout="row">
+	  		<div flex-xs flex-gt-xs="50" layout="column">
+	  			<md-card>
+			        <md-card-title>
+			          	<md-card-title-text>
+			            	<span class="md-headline">Submit Data Record</span>
+			            	<span class="md-subhead">&ltroad id, direction, dayOfWeek, timeOfDay&gt =&gt &lttraffic status&gt</span>
+			          	</md-card-title-text>
+			        </md-card-title>
 
-					    <md-input-container>
-					        <label>Direction</label>
-					        <input ng-model="user.email" type="email">
-					    </md-input-container>
+					<md-content layout-gt-sm="row" layout-padding>
+						<div>
+						    <md-input-container>
+							    <label>Road</label>
+						        <input ng-model="record.road">
+						    </md-input-container>
 
-					    <md-input-container>
-					        <label>Day</label>
-					        <input ng-model="user.email" type="email">
-					    </md-input-container>
+						    <md-input-container>
+						        <label>Direction</label>
+						        <input ng-model="record.direction">
+						    </md-input-container>
 
-					    <md-input-container>
-					        <label>Time</label>
-					        <input ng-model="user.email" type="email">
-					    </md-input-container>
+						    <md-input-container>
+						        <label>Day</label>
+						        <input ng-model="record.day">
+						    </md-input-container>
 
-					    <md-input-container>
-					        <label>Status</label>
-					        <input ng-model="user.email" type="email">
-					    </md-input-container>
-					</div>
-				</md-content>
+						    <md-input-container>
+						        <label>Time</label>
+						        <input ng-model="record.time">
+						    </md-input-container>
 
-		        <md-card-actions layout="row" layout-align="end center">
-		          <md-button>Submit</md-button>
-		        </md-card-actions>
-	    	</md-card>
-  		</div>
+						    <md-input-container>
+						        <label>Status</label>
+						        <input ng-model="record.status">
+						    </md-input-container>
+						</div>
+					</md-content>
 
-  		<div flex-xs flex-gt-xs="50" layout="column">
-  			<md-card>
-		        <md-card-title>
-		          <md-card-title-text>
-		            <span class="md-headline">Predict Traffic Status</span>
-		            <span class="md-subhead">&ltroad id, direction, dayOfWeek, timeOfDay&gt</span>
-		          </md-card-title-text>
-		        </md-card-title>
+			        <md-card-actions layout="row" layout-align="end center">
+			          <md-button ng-click="submitRecord()">Submit</md-button>
+			        </md-card-actions>
+		    	</md-card>
+	  		</div>
 
-				<md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
-					<div>
-					    <md-input-container>
-						    <label>Road</label>
-					        <input ng-model="user.title">
-					    </md-input-container>
+	  		<div flex-xs flex-gt-xs="50" layout="column">
+	  			<md-card>
+			        <md-card-title>
+			          <md-card-title-text>
+			            <span class="md-headline">Predict Traffic Status</span>
+			            <span class="md-subhead">&ltroad id, direction, dayOfWeek, timeOfDay&gt</span>
+			          </md-card-title-text>
+			        </md-card-title>
 
-					    <md-input-container>
-					        <label>Direction</label>
-					        <input ng-model="user.email" type="email">
-					    </md-input-container>
+					<md-content layout-gt-sm="row" layout-padding>
+						<div>
+						    <md-input-container>
+							    <label>Road</label>
+						        <input ng-model="request.road">
+						    </md-input-container>
 
-					    <md-input-container>
-					        <label>Day</label>
-					        <input ng-model="user.email" type="email">
-					    </md-input-container>
+						    <md-input-container>
+						        <label>Direction</label>
+						        <input ng-model="request.direction">
+						    </md-input-container>
 
-					    <md-input-container>
-					        <label>Time</label>
-					        <input ng-model="user.email" type="email">
-					    </md-input-container>
-					</div>
-				</md-content>
+						    <md-input-container>
+						        <label>Day</label>
+						        <input ng-model="request.day">
+						    </md-input-container>
 
-		        <md-card-actions layout="row" layout-align="end center">
-		          <md-button>Predict</md-button>
-		        </md-card-actions>
-	    	</md-card>
-  		</div>
-    </md-content>
+						    <md-input-container>
+						        <label>Time</label>
+						        <input ng-model="request.time">
+						    </md-input-container>
+						</div>
+					</md-content>
+
+			        <md-card-actions layout="row" layout-align="end center">
+			          	<md-button ng-click="predictRequest()">Predict</md-button>
+			        </md-card-actions>
+		    	</md-card>
+	  		</div>
+	    </md-content>
+
+    </div>
   
   	<!-- Angular Material requires Angular.js Libraries -->
   	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
@@ -108,7 +115,6 @@
   	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
   
   	<script src="js/app.js"></script>
-
   
 </body>
 </html>
